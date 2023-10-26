@@ -4,7 +4,7 @@ function tocaSom(idElementoAudio){
 }
 //Constante das teclas com busca de todos os botões da classe
 const listaDeTeclas = document.querySelectorAll('.tecla');
-listaDeTeclas[2].onclick = tocaSomRisada;
+
 
 let contador = 0;
 while(contador < listaDeTeclas.length){
