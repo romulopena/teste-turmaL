@@ -4,14 +4,12 @@ function tocaSom(idElementoAudio){
 }
 //Constante das teclas com busca de todos os botões da classe
 const listaDeTeclas = document.querySelectorAll('.tecla');
-// criado o contador e o laço de repetição While tocando com o clique do botão
-let contador = 0;
-while(contador < listaDeTeclas.length){
-    const efeito = listaDeTeclas[contador].classList[1];
-    const idAudio = "#som_" + efeito;
-    listaDeTeclas[contador].onclick = function(){
-        tocaSom(idAudio)
-    }
-    contador = contador + 1;
-    console.log(contador);
+// criado o contador e o laço de repetição While e mudado para FOR tocando com o clique do botão
+for(let contador = 0;contador < listaDeTeclas.length;contador++){
+    const tecla = listaDeTeclas[contador];
+    const efeito = tecla.classList[1]; //chama o item 1 da dos classe dos botões
+    const idAudio = `#som_${efeito}`; //template string ${  } e uso do acento grave como texto da frase.
+    tecla.onclick = function(){ //função anônima ao ser clicada o
+        tocaSom(idAudio)  //chamando a função tocaSom com o idAudio
+    } 
 }
