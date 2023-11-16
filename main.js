@@ -11,5 +11,14 @@ for(let contador = 0;contador < listaDeTeclas.length;contador++){
     const idAudio = `#som_${efeito}`; //template string ${  } e uso do acento grave como texto da frase.
     tecla.onclick = function(){ //função anônima ao ser clicada o
         tocaSom(idAudio)  //chamando a função tocaSom com o idAudio
-    } 
+    }
+    //usando uma função com parâmetro evento e atribuindo a classe"ativa" com a tecla. (Interação)
+    tecla.onkeydown = function(evento){
+        if(evento.code != 'Tab'){
+           tecla.classList.add('ativa'); 
+        }
+    }
+    tecla.onkeyup = function(){
+        tecla.classList.remove('ativa');
+    }
 }
