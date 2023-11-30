@@ -1,6 +1,12 @@
 //criado a função para tocar o som e feito a busca da id do som
 function tocaSom(idElementoAudio){
-    document.querySelector(idElementoAudio).play();
+    const elemento = document.querySelector(idElementoAudio);
+    if (elemento && elemento.localName === 'audio'){
+        elemento.play();
+    }else{
+        console.log("Elemento não encontrado ou seletor inválido");
+    }
+    
 }
 //Constante das teclas com busca de todos os botões da classe
 const listaDeTeclas = document.querySelectorAll('.tecla');
@@ -14,8 +20,8 @@ for(let contador = 0;contador < listaDeTeclas.length;contador++){
     }
     //usando uma função com parâmetro evento e atribuindo a classe"ativa" com a tecla. (Interação)
     tecla.onkeydown = function(evento){
-        console.log(evento.code == 'Space');
-        if(evento.code === 'Space'){
+        
+        if(evento.code === 'Space' || evento.code === 'Enter'){
             tecla.classList.add('ativa');
         }
     }
