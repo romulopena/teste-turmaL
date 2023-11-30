@@ -6,7 +6,6 @@ function tocaSom(idElementoAudio){
     }else{
         console.log("Elemento não encontrado ou seletor inválido");
     }
-    
 }
 //Constante das teclas com busca de todos os botões da classe
 const listaDeTeclas = document.querySelectorAll('.tecla');
