@@ -14,7 +14,8 @@ for(let contador = 0;contador < listaDeTeclas.length;contador++){
     }
     //usando uma função com parâmetro evento e atribuindo a classe"ativa" com a tecla. (Interação)
     tecla.onkeydown = function(evento){
-        if(evento.code === 'Space' || evento.code === 'Enter'){
+        console.log(evento.code == 'Space');
+        if(evento.code === 'Space'){
             tecla.classList.add('ativa');
         }
     }
