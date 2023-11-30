@@ -14,11 +14,11 @@ for(let contador = 0;contador < listaDeTeclas.length;contador++){
     }
     //usando uma função com parâmetro evento e atribuindo a classe"ativa" com a tecla. (Interação)
     tecla.onkeydown = function(evento){
-        if(evento.code != 'Tab'){
-           tecla.classList.add('ativa'); 
+        if(evento.code === 'Space' || evento.code === 'Enter'){
+            tecla.classList.add('ativa');
         }
     }
-    tecla.onkeyup = function(){
-        tecla.classList.remove('ativa');
+        tecla.onkeyup = function(){
+            tecla.classList.remove('ativa');
+        }
     }
-}
